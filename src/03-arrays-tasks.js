@@ -235,7 +235,10 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
   let sum = 0;
-  return arr.map((k) => sum += k);
+  return arr.map((item) => {
+    sum += item;
+    return sum;
+  });
 }
 
 /**
@@ -446,7 +449,10 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (_, i) => Array.from({ length: n }, (_, j) => (i === j ? 1 : 0)));
+  return Array.from({ length: n }, (_row, i) => Array.from(
+    { length: n },
+    (_col, j) => (i === j ? 1 : 0),
+  ));
 }
 
 /**
